@@ -42,13 +42,13 @@ class Scene1(Scene):
     
     wait_times = [ 
       4,  #  0. after writing "effectuer l'addition"
-      2,  #  1. time before highlighting factors
+      4,  #  1. time before highlighting factors
       5,  #  2. time before moving factors into denominator of result
       8,  #  3. time before extracting first summand
       2,  #  4. time before multiplying first summand by 1
       4,  #  5. time before expanding 1 = missing_facs / missing_facs
       4,  #  6. time before beginning to work alongside
-      1,  #  7. time before expanding the top right-hand bit
+      2,  #  7. time before expanding the top right-hand bit
       2,  #  8. time before expanding the top (the rest)
       4,  #  9. time before focusing on second summand
       1,  # 10. time before multiplying first summand by 1
@@ -56,7 +56,7 @@ class Scene1(Scene):
       1,  # 12. time before beginning to work alongside
       0,  # 13. time before expanding the top right-hand bit
       1,  # 14. time before expanding the top (the rest)
-      4,  # 15. time before summing new numerators
+      6,  # 15. time before summing new numerators
       2,  # 16. time between pickin up numf' and numg'
       2,  # 17. time to display summed numerator
       1,  # 18. time do wait before finalisin
@@ -182,11 +182,11 @@ class Scene3(Scene):
       1,  #  5. time before expanding 1 = missing_facs / missing_facs
       2,  #  6. time before beginning to work alongside
       3,  #  7. time before expanding the top right-hand bit
-      5,  #  8. time before expanding the top (the rest)
+      3,  #  8. time before expanding the top (the rest)
       4,  #  9. time before focusing on second summand
       1,  # 10. time before multiplying first summand by 1
       1,  # 11. time before expanding 1 = missing_facs / missing_facs
-      1,  # 12. time before beginning to work alongside
+      2,  # 12. time before beginning to work alongside
       0,  # 13. time before expanding the top right-hand bit
       4,  # 14. time before expanding the top (the rest)
       4,  # 15. time before summing new numerators
@@ -371,7 +371,7 @@ def add_rationals(self):
   
   # work on it alongside (recolours bottom to white)
   working_f = MathTex(
-    r"= { (" + "".join([*numf]) + ") \cdot" + "".join([*missing_facs_f])
+    r"= { (" + "".join([*numf]) + r") \cdot" + "".join([*missing_facs_f])
     + r"\over" + "".join([*denomf]) + r"\cdot" + "".join([*missing_facs_f])
     + r"}").scale(calc_scale).next_to(og_f, RIGHT)
   self.play(ReplacementTransform(og_f.copy(), working_f))
@@ -428,15 +428,15 @@ def add_rationals(self):
   og_g = VGroup(g, frac_one)
   
   # work on it alongside (recolours bottom to white)
-  temp = r" = { (" + "".join([*numg]) + ") \cdot" + "".join([*missing_facs_g]) \
+  temp = r" = { (" + "".join([*numg]) + r") \cdot" + "".join([*missing_facs_g]) \
     + r"\over" + "".join([*denomg]) + r"\cdot" + "".join([*missing_facs_g]) + r"}"
-  working_g = MathTex(temp).scale(calc_scale).next_to(og_g, RIGHT)
+  working_g = MathTex(temp).next_to(og_g, RIGHT).scale(calc_scale)
   self.play(ReplacementTransform(og_g.copy(), working_g))
   self.wait(wait_times[13])
     
   # expand out the top (right-hand bit)
   temp = MathTex(
-    r" = { (" + "".join([*numg]) + ") \cdot" + expanded_missing_facs_g
+    r" = { (" + "".join([*numg]) + r") \cdot" + expanded_missing_facs_g
     + r"\over" + "".join([*denomg]) + r"\cdot" + "".join([*missing_facs_g])
     + r"}").scale(calc_scale).next_to(og_g, RIGHT)
   self.play(FadeTransform(working_g, temp), run_time = 2)
