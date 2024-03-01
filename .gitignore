@@ -1,0 +1,8 @@
+## GITIGNORE FOR MANIM 
+
+## Partial movie files:
+partial_movie_files/
+
+## TeX output:
+*.svg
+*.tex
