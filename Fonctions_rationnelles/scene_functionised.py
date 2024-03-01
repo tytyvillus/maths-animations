@@ -3,6 +3,8 @@
 
 from manim import *
 
+global calc_scale
+calc_scale = 0.9
 
 class Scene1(Scene):
   def construct(self):
@@ -86,6 +88,7 @@ class Scene2(Scene):
     denomg = (r"(x-1)^2", r"(x+5)",) # denominator of g, bracketed, tuple
     
     # -> assumes common factors are adjacent, with greatest on the right
+    # so that picks correct version when placing factors in denomh
     
     # provide symbolic computations:
     
@@ -235,6 +238,8 @@ def add_rationals(self):
   global wait_times # waiting times between actions
 
   global colours # colours to use for highlighting factors
+
+  global calc_scale # how to scale the working expressions
   
   # PROBLEM STATEMENT
 
@@ -252,7 +257,7 @@ def add_rationals(self):
   clr_idx = 0 
     
   # Arrange main text of task (with math_expr)
-  VGroup(task, main_expr).arrange(2*DOWN)
+  VGroup(task, main_expr).arrange(DOWN, buff = 0.8)
   self.play(Write(task))
   self.play(Write(main_expr))
   self.wait(wait_times[0])
@@ -341,11 +346,11 @@ def add_rationals(self):
     
   # For f
   
-  f = main_expr[1 : idx_df + len(denomf)].copy() # extract f
+  f = main_expr[1 : idx_df + len(denomf)].copy().scale(calc_scale) # extract f
   self.play(f.animate.move_to(LEFT).to_edge(LEFT)) # animate f
   
   # multiply by 1
-  frac_one = MathTex(r"\cdot\ 1").next_to(f, RIGHT)
+  frac_one = MathTex(r"\cdot\ 1").scale(calc_scale).next_to(f, RIGHT)
   
   self.wait(wait_times[4])
   self.play(FadeIn(frac_one))
@@ -356,7 +361,7 @@ def add_rationals(self):
       r"\cdot\ {" + "".join([*missing_facs_f]) 
       + r"\over " + "".join([*missing_facs_f]) 
       + r"}"
-      ).next_to(f, RIGHT)
+      ).scale(calc_scale).next_to(f, RIGHT)
       )
     )
   self.wait(wait_times[6]) # time before beginning to work alongside
@@ -368,7 +373,7 @@ def add_rationals(self):
   working_f = MathTex(
     r"= { (" + "".join([*numf]) + ") \cdot" + "".join([*missing_facs_f])
     + r"\over" + "".join([*denomf]) + r"\cdot" + "".join([*missing_facs_f])
-    + r"}").next_to(og_f, RIGHT)
+    + r"}").scale(calc_scale).next_to(og_f, RIGHT)
   self.play(ReplacementTransform(og_f.copy(), working_f))
   self.wait(wait_times[7])
     
@@ -376,7 +381,7 @@ def add_rationals(self):
   temp = MathTex(
     r" = { (" + "".join([*numf]) + ") \cdot" + expanded_missing_facs_f
     + r"\over" + "".join([*denomf]) + r"\cdot" + "".join([*missing_facs_f])
-    + r"}").next_to(og_f, RIGHT)
+    + r"}").scale(calc_scale).next_to(og_f, RIGHT)
   self.play(FadeTransform(working_f, temp), run_time = 2)
   self.remove(temp)
   working_f = temp
@@ -390,7 +395,7 @@ def add_rationals(self):
   ##  + r"}").next_to(og_f, RIGHT)
   temp = MathTex(
     r"= {", new_numf,
-    r"\over " + "".join([*denomh]) + r"}").next_to(og_f, RIGHT)
+    r"\over " + "".join([*denomh]) + r"}").scale(calc_scale).next_to(og_f, RIGHT)
   self.play(FadeTransform(working_f, temp), run_time = 2)
   self.remove(temp)
   working_f = temp
@@ -403,7 +408,7 @@ def add_rationals(self):
   self.play(g.animate.to_corner(DL)) # animate g
   
   # multiply by 1
-  frac_one = MathTex(r"\cdot\ 1").next_to(g, RIGHT)
+  frac_one = MathTex(r"\cdot\ 1").scale(calc_scale).next_to(g, RIGHT)
   
   self.wait(wait_times[10])
   self.play(FadeIn(frac_one))
@@ -414,7 +419,7 @@ def add_rationals(self):
       r"\cdot\ {" + "".join([*missing_facs_g]) 
       + r"\over " + "".join([*missing_facs_g]) 
       + r"}"
-      ).next_to(g, RIGHT)
+      ).scale(calc_scale).next_to(g, RIGHT)
       )
     )
   self.wait(wait_times[12])
@@ -423,10 +428,9 @@ def add_rationals(self):
   og_g = VGroup(g, frac_one)
   
   # work on it alongside (recolours bottom to white)
-  working_g = MathTex(
-    r"= { (" + "".join([*numg]) + ") \cdot" + "".join([*missing_facs_g])
-    + r"\over" + "".join([*denomg]) + r"\cdot" + "".join([*missing_facs_g])
-    + r"}").next_to(og_g, RIGHT)
+  temp = r" = { (" + "".join([*numg]) + ") \cdot" + "".join([*missing_facs_g]) \
+    + r"\over" + "".join([*denomg]) + r"\cdot" + "".join([*missing_facs_g]) + r"}"
+  working_g = MathTex(temp).scale(calc_scale).next_to(og_g, RIGHT)
   self.play(ReplacementTransform(og_g.copy(), working_g))
   self.wait(wait_times[13])
     
@@ -434,7 +438,7 @@ def add_rationals(self):
   temp = MathTex(
     r" = { (" + "".join([*numg]) + ") \cdot" + expanded_missing_facs_g
     + r"\over" + "".join([*denomg]) + r"\cdot" + "".join([*missing_facs_g])
-    + r"}").next_to(og_g, RIGHT)
+    + r"}").scale(calc_scale).next_to(og_g, RIGHT)
   self.play(FadeTransform(working_g, temp), run_time = 2)
   self.remove(temp)
   working_g = temp
@@ -445,7 +449,7 @@ def add_rationals(self):
   temp = MathTex(
     r"= {", new_numg,
     r"\over " + "".join([*denomg]) + "".join([*missing_facs_g])
-    + r"}").next_to(og_g, RIGHT)
+    + r"}").scale(calc_scale).next_to(og_g, RIGHT)
   self.play(FadeTransform(working_g, temp), run_time = 2)
   self.remove(temp)
   working_g = temp
@@ -454,8 +458,8 @@ def add_rationals(self):
 
   # SUM SUMMANDS TO GET NUMERATOR OF h
 
-  result_num_summand_f = working_f[1].copy().move_to(UP)
-  result_num_summand_g = working_g[1].copy().move_to(DOWN)
+  result_num_summand_f = working_f[1].copy().scale(1/calc_scale).move_to(UP)
+  result_num_summand_g = working_g[1].copy().scale(1/calc_scale).move_to(DOWN)
   plus = MathTex("+")
   
   numh_mobject = MathTex(numh)
