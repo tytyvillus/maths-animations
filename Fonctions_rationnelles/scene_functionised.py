@@ -85,6 +85,8 @@ class Scene2(Scene):
     numg = (r"2x",)       # numerator of g, not bracketed, tuple
     denomg = (r"(x-1)^2", r"(x+5)",) # denominator of g, bracketed, tuple
     
+    # -> assumes common factors are adjacent, with greatest on the right
+    
     # provide symbolic computations:
     
     # tuples:
@@ -250,7 +252,7 @@ def add_rationals(self):
   clr_idx = 0 
     
   # Arrange main text of task (with math_expr)
-  VGroup(task, main_expr).arrange(DOWN)
+  VGroup(task, main_expr).arrange(2*DOWN)
   self.play(Write(task))
   self.play(Write(main_expr))
   self.wait(wait_times[0])
@@ -317,10 +319,10 @@ def add_rationals(self):
     # animate from main_expr:
     
     # first, compute correct index in main_expr
-    if i < 1 + len(denomf):
+    if i < 1 + len(denomf) - common_facs:
       idx = idx_df + i - 1
     else:
-      idx = idx_dg + i - 1 - len(denomf)
+      idx = idx_dg + i - (1 + len(denomf) - common_facs)
       
     # temporary expression for factor (x-x1)
     temp = main_expr.submobjects[idx].copy()
@@ -382,10 +384,13 @@ def add_rationals(self):
   self.wait(wait_times[8])
   
   # expand out the top (the rest)
+  ##temp = MathTex(
+  ##  r"= {", new_numf,
+  ##  r"\over " + "".join([*denomf]) + "".join([*missing_facs_f])
+  ##  + r"}").next_to(og_f, RIGHT)
   temp = MathTex(
     r"= {", new_numf,
-    r"\over " + "".join([*denomf]) + "".join([*missing_facs_f])
-    + r"}").next_to(og_f, RIGHT)
+    r"\over " + "".join([*denomh]) + r"}").next_to(og_f, RIGHT)
   self.play(FadeTransform(working_f, temp), run_time = 2)
   self.remove(temp)
   working_f = temp
