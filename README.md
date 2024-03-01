@@ -1,4 +1,6 @@
-# Mathematical animatinos
+# Mathematical animations
+
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
 Animations using [Manim](https://www.manim.community/).
 
