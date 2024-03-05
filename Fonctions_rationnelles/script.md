@@ -52,6 +52,5 @@ Le résultat peut être mis directement dans le numérateur de la réponse. Et c
 
 Merci pour votre attention!
 
-# Video 2
 
 
