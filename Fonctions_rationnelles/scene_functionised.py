@@ -3,6 +3,7 @@
 
 from manim import *
 
+# set scale by which working out is smaller than main text
 global calc_scale
 calc_scale = 0.9
 
@@ -61,7 +62,7 @@ class Scene1(Scene):
       2,  # 17. time to display summed numerator
       1,  # 18. time do wait before finalisin
       10, # 19. time to display boxed expr
-      ]
+      ] * 1.5
 
     colours = [PURPLE, GOLD, MAROON, TEAL, BLUE, YELLOW, RED]
     # correct colouring relies on common factors b/n f and g being
@@ -109,7 +110,7 @@ class Scene2(Scene):
     numh = r"7x^2 + 32x - 25"
     
     wait_times = [ 
-      10, #  0. after writing "effectuer l'addition"
+      8,  #  0. after writing "effectuer l'addition"
       2,  #  1. time before highlighting factors
       3,  #  2. time before moving factors into denominator of result
       2,  #  3. time before extracting first summand
@@ -129,7 +130,7 @@ class Scene2(Scene):
       2,  # 17. time to display summed numerator
       1,  # 18. time do wait before finalisin
       10, # 19. time to display boxed expr
-      ]
+      ] * 1.5
 
     colours = [PURPLE, GOLD, MAROON, TEAL, BLUE, YELLOW, RED]
     # correct colouring relies on common factors b/n f and g being
@@ -174,7 +175,7 @@ class Scene3(Scene):
     numh = r"x^3 + 11x^2 + 26x - 31"
     
     wait_times = [ 
-      10, #  0. after writing "effectuer l'addition"
+      8,  #  0. after writing "effectuer l'addition"
       2,  #  1. time before highlighting factors
       3,  #  2. time before moving factors into denominator of result
       2,  #  3. time before extracting first summand
@@ -194,7 +195,7 @@ class Scene3(Scene):
       2,  # 17. time to display summed numerator
       1,  # 18. time do wait before finalisin
       10, # 19. time to display boxed expr
-      ]
+      ] * 1.5
 
     colours = [PURPLE, GOLD, MAROON, TEAL, BLUE, YELLOW, RED]
     # correct colouring relies on common factors b/n f and g being
