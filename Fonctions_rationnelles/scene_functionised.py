@@ -62,7 +62,9 @@ class Scene1(Scene):
       2,  # 17. time to display summed numerator
       1,  # 18. time do wait before finalisin
       10, # 19. time to display boxed expr
-      ] * 1.5
+      ] 
+      
+    wait_times = [i * 1.5 for i in wait_times]
 
     colours = [PURPLE, GOLD, MAROON, TEAL, BLUE, YELLOW, RED]
     # correct colouring relies on common factors b/n f and g being
@@ -130,7 +132,9 @@ class Scene2(Scene):
       2,  # 17. time to display summed numerator
       1,  # 18. time do wait before finalisin
       10, # 19. time to display boxed expr
-      ] * 1.5
+      ] 
+      
+    wait_times = [i * 1.5 for i in wait_times]
 
     colours = [PURPLE, GOLD, MAROON, TEAL, BLUE, YELLOW, RED]
     # correct colouring relies on common factors b/n f and g being
@@ -195,7 +199,9 @@ class Scene3(Scene):
       2,  # 17. time to display summed numerator
       1,  # 18. time do wait before finalisin
       10, # 19. time to display boxed expr
-      ] * 1.5
+      ] 
+      
+    wait_times = [i * 1.5 for i in wait_times]
 
     colours = [PURPLE, GOLD, MAROON, TEAL, BLUE, YELLOW, RED]
     # correct colouring relies on common factors b/n f and g being
