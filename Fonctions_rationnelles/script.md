@@ -1,6 +1,6 @@
 DIDN'T MAKE THE VIDEO WITH MANIM'S IN-BUILT VOICE CAPTURE TOOL −− I REGRET THAT NOW
 
-# Video 1
+# Scene 1
 
 Bienvenue à cette vidéo sur l'addition de fonctions rationnelles.
 
@@ -50,7 +50,105 @@ C'est-à-dire, nous additionnons les numérateurs.
 
 Le résultat peut être mis directement dans le numérateur de la réponse. Et comme ça, nous avons terminé.  
 
-Merci pour votre attention!
+***
+
+B
+# Scene 2
+
+Maintenant, un deuxième exemple.
+
+Nous allons effectuer l'addition de ces deux fonctions-ci.
+
+Vous remarquerez que la nuance ici est 
+qu'un facteur est partagé parmi les deux expressions.
+
+De plus, il apparaît à une puissance plus grande que 1.
+
+Comment procéder?
+
+On utilise la même procédure que toute à l'heure.
+
+D'abord, on identifie les facteurs.
+
+Ensuite, on les insère dans le dénominateur,
+en choisissant le maximum de fois que chaque facteur apparaît.
+
+Ici c'est deux fois, c'est-à-dire: puissance 2.
+
+Ensuite, c'est la même procédure.
+
+On multiplie par 1.
+
+On insère les facteurs manquants.
+
+Et on opère sur le numérateur.
+
+On développe le numérateur en multipliant les parenthèses.
+
+Même procédure pour le deuxième terme de la somme.
+
+On le multiplie par 1.
+
+On insère les facteurs manquants.
+
+Et on effectue dans le numérateur.
+
+Nous avons à présent deux fractions avec le même dénominateur,
+nous pouvons les additionner ensemble.
+
+Le résultat de cette addition est le numérateur de la réponse finale.
+
+Et comme cela, nous avons terminé le deuxième exemple.
+
+# Scene 3
+
+Troisième et dernier exemple, avec deux nouvelles fonctions.
+
+Observez bien les facteurs: nous avons donc trois facteurs différents,
+dont un qui est répété plusieurs fois.
+
+Il faut identifier les facteurs:
+la puissance la plus haute pour le facteur répété (x−1)
+est la puissance 3.
+
+Il faut donc que le dénominateur du résultat ait (x−1)³.
+
+Ensuite, la même procédure. 
+On multiplie par 1;
+on insère les facteurs manquants.
+(Remarquez que les facteurs manquants sont (x−1)(x+5),
+parce qu'il y a déjà (x−1)², 
+donc pour obtenir (x−1)³ il ne faut multiplier qu’une seule fois par (x−1).)
+
+On effectue le numérateur…
+
+Ici faites particulièrement attention à la multiplication, 
+parce qu'on a un binôme fois un trinôme.
+Il ne faut donc pas oublier les 6 paires possibles pour effectuer ce produit.
+
+Mais après quelques lignes de calcul,
+voilà le résultat qu'on obtient.
+
+Même méthodologie pour le deux:
+ici le facteur manquant est uniquement (x+6), parce qu'on a déjà (x−1)³ · (x+5).
+Donc on multiplie par (x+6)/(x+6).
+
+Puis on effectue la multiplication dans le numérateur pour obtenir le résultat voulu.
+
+Une fois cette multiplication effectuée, on additionne les numérateurs.  
+
+***
+
+Le résultat de cette addition sera le numérateur de l'expression finale.
+
+Et comme cela, nous avons terminé notre troisième et dernier exemple.
+
+Si vous arrivez à effectuer ces additions, c'est que vous avez compris le principe de l'addition de fonctions rationnelles. 
+
+Félicitations, et à bientôt!
+
+** musique **
+
 
 
 
