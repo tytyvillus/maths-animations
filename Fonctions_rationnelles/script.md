@@ -6,7 +6,7 @@ Bienvenue à cette vidéo sur l'addition de fonctions rationnelles.
 
 ***
 
-Aujourd'hui nous allons effectuer l'addition des deux fonctions présentes sur l'écran. Ici elles sont déjà factorisées, mais si ce n'est pas déjà fait, il faudra factoriser le dénominateur.
+Aujourd'hui nous allons effectuer l'addition des deux fonctions présentes sur l'écran. Ici les dénominateurs sont déjà factorisés, mais si ce n'est pas déjà fait, il faudra les factoriser le plus possible.
 
 Comment procéder?
 
@@ -16,7 +16,7 @@ Nous avons déjà vu que le résultat d'une addition de fonctions rationnelles d
 
 Nous pouvons donc identifier les facteurs des deux dénominateurs, et les placer déjà dans le dénominateur du résultat. Comme ça, nous nous assurons que le résultat ait les bonnes asymptotes.
 
-Maintenant, pour l'addition.  Nous n'avons pas le droit d'additionner les numérateurs, parce que leurs dénominateurs sont différents.  Nous allons donc travailler sur chacune des deux fonctions à sommer pour donner quelque chose qui fonctionne.
+Maintenant, pour l'addition.  Nous n'avons pas le droit d'additionner les numérateurs, parce que leurs dénominateurs sont différents.  Nous allons donc travailler sur chacune des deux fonctions à sommer individuellement pour donner quelque chose qui fonctionne.
 
 ***
 
